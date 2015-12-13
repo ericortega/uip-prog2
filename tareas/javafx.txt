@@ -1,0 +1,104 @@
+
+que es javafx 
+
+
+JavaFX es una tecnología de software que, combinada con Java,
+permite crear y desplegar aplicaciones con un aspecto vanguardista y contenidos avanzados,
+audio y vídeo.
+
+como se instala
+
+1) Hay que empezar juntando todo lo que necesitas. 
+Necesitas obtener e instalar lo siguiente para una implementación de JavaFX 
+2.0 que funcione en tu sistema Ubuntu Linux.
+
+Oracle Java JDK/JRE
+NetBeans IDE
+Oracle JavaFX SDK
+
+2) Asegúrate de tener instalado Oracle Java en tu sistema Ubuntu Linux. 
+Para este proyecto es imperativo que tengas Oracle Java y no OpenJDK en tu sistema.
+
+3) Necesitas obtener una copia de NetBeans IDE con soporte JavaFX e instalarlo en tu sistema. 
+Es mejor que obtengas la última versión para asegurarte de que tenga un soporte completo para JavaFX. 
+Asegúrate de obtener el NetBeans IDE correcto para tu sistema Ubuntu Linux, ya sea 32-bit o 64-bit.
+Mi sugerencia es que descargues el NetBeans IDE y lo copies a /usr/local y lo instales usando este método.
+
+4) instala NetBeans IDE en tu sistema Ubuntu Linux.
+
+5) Descarga NetBeans IDE
+Selecciona y descarga el NetBeans IDE que tenga “todas” las funciones, 
+es usualmente el de 210MB o más para tu sistema Ubuntu Linux.
+
+Teclea/Copia/Pega: cd /home/"tu_usuario"/Descargas
+Teclea/Copia/Pega: sudo -s cp -r netbeans-7.1.2-ml-linux.sh /usr/local
+Teclea/Copia/Pega: cd /usr/local/
+Teclea/Copia/Pega: sudo -s chmod +x netbeans-7.1.2-ml-linux.sh
+Esto hará que Netbeans IDE sea ejecutable para todos los usuarios del sistema.
+Teclea/Copia/Pega: ./netbeans-7.1.2-ml-linux.sh
+Ejecuta para instalar Netbeans IDE a tu sistema.
+
+6) Descarga JavaFX Beta para Linux, ahora, para obtener JavaFX Beta SDK para Linux, 
+necesitarás crear y registrar una cuenta con Oracle.
+Si no lo haces, no podrás obtener el JavaFX Beta 2.0 SDK.
+
+7) Selecciona el JavaFX SDK correcto para tu sistema operativo ( 32-bit o 64-bit )
+javafx_sdk-2_2_0-beta-b13-linux-i586-13_jun_2012.zip (32-bit)
+javafx_sdk-2_2_0-beta-b13-linux-x64-13_jun_2012.zip (64-bit). 
+
+8) Instrucciones para 32-bit:
+Teclea/Copia/Pega: cd /home/"tu_usuario"/Descargas
+Teclea/Copia/Pega: sudo -s chmod +x javafx_sdk-2_2_0-beta-b13-linux-i586-13_jun_2012.zip
+Teclea/Copia/Pega: sudo -s cp -r javafx_sdk-2_2_0-beta-b13-linux-i586-13_jun_2012.
+zip /usr/local
+
+9) Instrucciones para 64-bit:
+Teclea/Copia/Pega: cd /home/"tu_usuario"/Descargas
+Teclea/Copia/Pega: sudo -s chmod +x javafx_sdk-2_2_0-beta-b13-linux-x64-13_jun_2012.zip
+Teclea/Copia/Pega: sudo -s cp -r javafx_sdk-2_2_0-beta-b13-linux-x64-13_jun_2012.
+zip /usr/local
+
+10) Ahora cambia a /usr/local y descomprime el JavaFX 2.0 SDK en el directorio
+ /usr/local de tu sistema. 
+
+11) Instrucciones 32-bit:
+Teclea/Copia/Pega: cd /usr/local
+Teclea/Copia/Pega: unzip javafx_sdk-2_2_0-beta-b13-linux-i586-13_jun_2012.zip 
+
+12) Instrucciones 64-bit:
+Teclea/Copia/Pega: cd /usr/local
+Teclea/Copia/Pega: unzip javafx_sdk-2_2_0-beta-b13-linux-x64-13_jun_2012.zip
+
+13) Configurar JavaFX para que funcione con NetBeans IDE
+Inicia NetBeans
+NetBeans te pedirá que crees una nueva plataforma Java que tenga JavaFX habilitada en ella.
+Selecciona Archivo>Nuevo Proyecto>JavaFX>Aplicación JavaFX.
+Haz clic en Siguiente.
+Haz clic en Manejar Plataformas>Añadir Platadorma.
+Te pedirá que apuntes a tu instalación de Oracle Java la cual debería ser 
+/usr/local/java/jdk1.7.0_05 oo el directorio donde hayas instalado tu Java JDK.
+Haz clic en Siguiente y Terminar, 
+notarás tan pronto como crees tu nueva plataforma Java que una pequeña pestaña llamada JavaFX aparecerá.
+Haz clic en la pestaña de JavaFX.
+
+14) Una vez que introduzcas la ubicación de la ubicación de la plataforma JavaFX el NetBeans IDE automáticamente llenará el resto de las ubicaciones para las bibliotecas JavaFX restantes.
+Haz clic en Cerrar.
+Asegúrate de regresar a la pantalla que dice Nueva Aplicación JavaFX y ve hacia donde dice Plataformas JavaFX y selecciona la plataforma Java que tu creaste con JavaFX habilitado.
+Debería decir JDK1.7.0 y no JDK1.7.0(Default).
+Haz clic en habilitar JavaFX.
+
+15) Felicidades, una vez que la tarea se complete tu NetBeans IDE estará completamente configurado para tu desarrollo de JavaFX en Ubuntu 
+Ahora llena la ubicación donde descomprimiste el JavaFX SDK, la cual debería ser /usr/local/javafx-sdk2.2.0-beta. 
+
+Cómo funciona
+
+Las aplicaciones JavaFX pueden ser ejecutadas en una amplia variedad de dispositivos. 
+En su versión (JavaFX 1.3, abril 2010) permite crear aplicaciones de escritorio, 
+para celulares, la Web, TV, consolas de videojuegos, reproductores Blu-ray, 
+entre otras plataformas planeadas. 
+En octubre de 2011 fue lanzada la versión 2.0. 
+Para el desarrollo de aplicaciones JavaFX un lenguaje declarativo, 
+tipado llamado JavaFX Script, además puede integrarse código Java en programas JavaFX. 
+JavaFX es compilado a código Java, 
+por lo que las aplicaciones JavaFX pueden ser ejecutadas en computadores con la máquina virtual de Java instalada (JRE),
+o celulares corriendo Java ME.

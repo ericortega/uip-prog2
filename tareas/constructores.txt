@@ -1,0 +1,40 @@
+package constructores;
+
+public class Minombre {
+	//Atributos
+	String nombre;
+	int edad;
+	
+	//Metodos
+	Minombre (String cadena,int numero){
+		nombre=cadena;
+		edad=numero;
+	}
+    
+	void imprimir(){
+		System.out.println(nombre+"edad:"+edad);
+	}
+}
+
+
+
+
+-----------------------------------------------------------------
+
+-----------------------------------------------------------------
+
+
+
+package constructores;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		Minombre n1 = new Minombre ("eric",23);
+		
+		n1.imprimir();
+
+	}
+
+}

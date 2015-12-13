@@ -1,0 +1,146 @@
+ 
+Buscar qué son los constructores en Java, 
+para qué funcionan y cuáles son sus beneficios. 
+Además, incluir un ejemplo de su implementación.
+
+Un constructor es un método especial de una clase que se llama automáticamente 
+siempre que se declara un objeto de esa clase.
+Su función es inicializar el objeto y sirve para asegurarnos que los objetos siempre
+contengan valores válidos.
+
+Si estas familiarizado con POO no te sera muy difícil entenderlo, 
+
+Al tener una clase en Java obtienes la estructura que tendrán TODOS los objetos que crees 
+[instancies] a partir de la misma, si tienes una clase con un atributo y un método... 
+
+MiClase{ 
+int miAtributo; 
+void miMetodo(){} 
+} 
+
+
+todos los objetos que crees de esa clase tendrán la misma estructura
+ [un atributo y un método con ese nombre]. 
+
+El constructor de una clase sirve exactamente para eso,
+crear ese objeto a partir de la clase. 
+
+es necesario utilizar esta sintaxis, dado que no puedes acceder a los atributos
+y métodos de una clase sin tener un objeto de la misma [excepto en casos especiales 
+por así decirlo], es necesario que cada clase tenga su constructor,
+ si este no esta indicado en la clase, como el ejemplo que puse, 
+java le asigna uno por default, los constructores tienen varias reglas las cuales 
+puedes consultar por tu cuenta, pero básicamente debe tener el mismo nombre que la clase 
+y aunque es un método de esa clase debe empezar con mayúscula al igual que el nombre del 
+a clase [por estándar], siguiendo el ejemplo seria así: 
+
+MiClase(){ 
+
+} 
+
+si esto no lo indica el usuario, java se lo agrega a la clase {así vacio} en tiempo 
+de ejecución. 
+
+a diferencia de los métodos normales este método no especifica el valor que regresara 
+por que siempre regresara el mismo... todos los Constructores, regresan un objeto de la
+clase y para mandarse llamar debe hacerse con el operador new antes de su llamada.. 
+
+new MiClase( <parámetros en caso de que los requiera>) 
+
+si dentro del cuerpo del constructor [dentro de las llaves: {} ]se especifican 
+instrucciones estas se ejecutaran JUSTO ANTES de regresar el objeto solicitad.
+
+los beneficios
+Rapidez de desarrollo y mejora del software,
+Seguridad, fiabilidad y eficiencia.
+
+Por ejemplo, en la clase Fecha:
+import java.util.*;
+public class Fecha {
+
+    private int dia;
+    private int mes;
+    private int año;
+  
+    private boolean esBisiesto() {
+        return ((año % 4 == 0) && (año % 100 != 0) || (año % 400 == 0));
+    }
+
+    public void setDia(int d) {
+       dia = d;
+    }
+
+    public void setMes(int m) {
+        mes = m;
+    }
+
+    public void setAño(int a) {
+        año = a;
+    }
+
+    public void asignarFecha() {
+        Calendar fechaSistema = Calendar.getInstance();
+        setDia(fechaSistema.get(Calendar.DAY_OF_MONTH));
+        setMes(fechaSistema.get(Calendar.MONTH));
+        setAño(fechaSistema.get(Calendar.YEAR));
+    }
+
+    public void asignarFecha(int d) {
+        Calendar fechaSistema = Calendar.getInstance();
+        setDia(d);
+        setMes(fechaSistema.get(Calendar.MONTH));
+        setAño(fechaSistema.get(Calendar.YEAR));
+    }
+
+    public void asignarFecha(int d, int m) {
+        Calendar fechaSistema = Calendar.getInstance();
+        setDia(d);
+        setMes(m);
+        setAño(fechaSistema.get(Calendar.YEAR));
+    }
+
+    public void asignarFecha(int d, int m, int a) {
+        setDia(d);
+        setMes(m);
+        setAño(a);
+    }
+
+    public int getDia() {
+        return dia;
+    }
+
+    public int getMes() {
+        return mes;
+    }
+
+    public int getAño() {
+        return año;
+    }
+
+    public boolean fechaCorrecta() {
+        boolean diaCorrecto, mesCorrecto, anyoCorrecto;
+        anyoCorrecto = (año > 0);
+        mesCorrecto = (mes >= 1) && (mes <= 12);
+        switch (mes) {
+            case 2:
+                if (esBisiesto()) {
+                    diaCorrecto = (dia >= 1 && dia <= 29);
+                } else {
+                    diaCorrecto = (dia >= 1 && dia <= 28);
+                }
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                diaCorrecto = (dia >= 1 && dia <= 30);
+                break;
+            default:
+                diaCorrecto = (dia >= 1 && dia <= 31);
+        }
+        return diaCorrecto && mesCorrecto && anyoCorrecto;
+    }
+}
+no se ha definido ningún constructor, por lo que al declarar un objeto el compilador utilizará un constructor por defecto.
+En este caso el método constructor por defecto es:
+Fecha() { }
